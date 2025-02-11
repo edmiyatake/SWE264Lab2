@@ -137,8 +137,11 @@ public class ClientInput extends Thread {
                     LogComponent.log(sSection);
 
                     // Announce the command event #5 with student ID, course ID, and course section.
-                    EventBus.announce(EventBus.EV_SHOW, "\n");
+                    LogComponent.log("\n");
                     EventBus.announce(EventBus.EV_REGISTER_STUDENT, sSID + " " + sCID + " " + sSection);
+                    
+                    // Track registration and check for overbooking
+                    OverBookingComponent.registerStudent(sCID, sSection);
                     continue;
                 }
 
