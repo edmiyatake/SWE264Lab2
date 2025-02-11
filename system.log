@@ -134,3 +134,88 @@ x) Exit
 
 Enter your choice and press return >> 
 x
+
+Student Registration System
+
+1) List all students
+2) List all courses
+3) List students who registered for a course
+4) List courses a student has registered for
+5) List courses a student has completed
+6) Register a student for a course
+x) Exit
+
+Enter your choice and press return >> 
+6
+
+Enter student ID and press return >> 
+G00123456
+
+Enter course ID and press return >> 
+CS211
+
+Enter course section and press return >> 
+A
+
+
+
+Student Registration System
+
+1) List all students
+2) List all courses
+3) List students who registered for a course
+4) List courses a student has registered for
+5) List courses a student has completed
+6) Register a student for a course
+x) Exit
+
+Enter your choice and press return >> 
+6
+
+Enter student ID and press return >> 
+G00123456
+
+Enter course ID and press return >> 
+CS112
+
+Enter course section and press return >> 
+A
+
+
+
+Student Registration System
+
+1) List all students
+2) List all courses
+3) List students who registered for a course
+4) List courses a student has registered for
+5) List courses a student has completed
+6) Register a student for a course
+x) Exit
+
+Enter your choice and press return >> 
+6
+
+Enter student ID and press return >> 
+G00123456
+
+Enter course ID and press return >> 
+CS475
+
+Enter course section and press return >> 
+A
+
+
+
+Student Registration System
+
+1) List all students
+2) List all courses
+3) List students who registered for a course
+4) List courses a student has registered for
+5) List courses a student has completed
+6) Register a student for a course
+x) Exit
+
+Enter your choice and press return >> 
+x

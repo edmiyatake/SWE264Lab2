@@ -5,7 +5,6 @@
  *
  */
 
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 
@@ -49,11 +48,9 @@ public class RegisterStudentHandler extends CommandEventHandler {
         }
 
         // Check if the given course conflicts with any of the courses the student has registered.
-        ArrayList vCourse = objStudent.getRegisteredCourses();
-        for (int i=0; i<vCourse.size(); i++) {
-            if (((Course) vCourse.get(i)).conflicts(objCourse)) {
-                return "Registration conflicts";
-            }
+        // replaced with new component
+        if (CourseConflictChecker.hasConflict(objStudent, objCourse)) {
+            return "Registration conflicts";
         }
 
         // Request validated. Proceed to register.
