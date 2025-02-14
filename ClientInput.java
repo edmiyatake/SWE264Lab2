@@ -44,18 +44,6 @@ public class ClientInput extends Thread {
                 EventBus.announce(EventBus.EV_SHOW, "x) Exit");
                 EventBus.announce(EventBus.EV_SHOW, "\nEnter your choice and press return >> ");
                 String sChoice = objReader.readLine().trim();
-
-                LogComponent.log("\nStudent Registration System\n");
-                LogComponent.log("1) List all students");
-                LogComponent.log("2) List all courses");
-                LogComponent.log("3) List students who registered for a course");
-                LogComponent.log("4) List courses a student has registered for");
-                LogComponent.log("5) List courses a student has completed");
-                LogComponent.log("6) Register a student for a course");
-                LogComponent.log("x) Exit");
-                LogComponent.log("\nEnter your choice and press return >> ");
-                LogComponent.log(sChoice);
-
                 // Execute command 1: List all students.
                 if (sChoice.equals("1")) {
                     // Announce the command event #1.
@@ -77,12 +65,9 @@ public class ClientInput extends Thread {
                     // Get course ID and course section from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course ID and press return >> ");
                     String sCID = objReader.readLine().trim();
-                    LogComponent.log("\nEnter course ID and press return >> ");
-                    LogComponent.log(sCID);
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course section and press return >> ");
                     String sSection = objReader.readLine().trim();
-                    LogComponent.log("\nEnter course section and press return >> ");
-                    LogComponent.log(sSection);
+
 
                     // Announce the command event #3 with course ID and course section.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
@@ -95,8 +80,6 @@ public class ClientInput extends Thread {
                     // Get student ID from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter student ID and press return >> ");
                     String sSID = objReader.readLine().trim();
-                    LogComponent.log("\nEnter student ID and press return >> ");
-                    LogComponent.log(sSID);
 
                     // Announce the command event #4 with student ID.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
@@ -109,8 +92,6 @@ public class ClientInput extends Thread {
                     // Get student ID from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter student ID and press return >> ");
                     String sSID = objReader.readLine().trim();
-                    LogComponent.log("\nEnter student ID and press return >> ");
-                    LogComponent.log(sSID);
 
                     // Announce the command event #5 with student ID.
                     EventBus.announce(EventBus.EV_SHOW, "\n");
@@ -123,25 +104,17 @@ public class ClientInput extends Thread {
                     // Get student ID, course ID, and course section from user.
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter student ID and press return >> ");
                     String sSID = objReader.readLine().trim();
-                    LogComponent.log("\nEnter student ID and press return >> ");
-                    LogComponent.log(sSID);
 
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course ID and press return >> ");
                     String sCID = objReader.readLine().trim();
-                    LogComponent.log("\nEnter course ID and press return >> ");
-                    LogComponent.log(sCID);
 
                     EventBus.announce(EventBus.EV_SHOW, "\nEnter course section and press return >> ");
                     String sSection = objReader.readLine().trim();
-                    LogComponent.log("\nEnter course section and press return >> ");
-                    LogComponent.log(sSection);
 
                     // Announce the command event #5 with student ID, course ID, and course section.
-                    LogComponent.log("\n");
                     EventBus.announce(EventBus.EV_REGISTER_STUDENT, sSID + " " + sCID + " " + sSection);
                     
                     // Track registration and check for overbooking
-                    OverBookingComponent.registerStudent(sCID, sSection);
                     continue;
                 }
 
@@ -153,7 +126,6 @@ public class ClientInput extends Thread {
 
             // Clean up the resources.
             objReader.close();
-            LogComponent.close();
         }
         catch (Exception e) {
             // Dump the exception information for debugging.

@@ -28,6 +28,7 @@ public class ClientOutput implements Observer {
     public ClientOutput() {
         // Subscribe to SHOW event.
         EventBus.subscribeTo(EventBus.EV_SHOW, this);
+        EventBus.subscribeTo(EventBus.EV_COURSE_OVERBOOKED, this); // NEW: Listen for overbooked courses
     }
 
     /**

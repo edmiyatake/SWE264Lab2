@@ -70,6 +70,8 @@ public class EventBus {
      */
     public static final int EV_REGISTER_STUDENT = 6;
 
+    public static final int EV_COURSE_OVERBOOKED = 7; // New event for overbooked courses
+
     /**
      * The number of defined events.
      */
@@ -79,10 +81,11 @@ public class EventBus {
      * An array containing event objects for all defined events.
      */
     protected static Event[] aEvent = new Event[MAX_NUM_EVENTS];
-
+    
     /**
      * Initialize the event bus. Existing subscriptions (event/receiver mappings) are cleared.
      */
+
     public static void initialize() {
         for (int i=0; i<MAX_NUM_EVENTS; i++) {
             aEvent[i] = new Event();

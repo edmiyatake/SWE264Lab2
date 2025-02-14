@@ -82,6 +82,11 @@ class SystemMain {
 					EventBus.EV_REGISTER_STUDENT,
 					EventBus.EV_SHOW);
 
+
+			// Initialize logging component
+			new LoggerComponent(); // Logs all EV_SHOW events to a file
+			new OverbookedCourseMonitor(); // Announce when courses exceed 3 students
+
 			ClientInput objClientInput = new ClientInput();
 			ClientOutput objClientOutput = new ClientOutput();
 
