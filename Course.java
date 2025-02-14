@@ -7,6 +7,7 @@
 
 
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.StringTokenizer;
 
 
@@ -19,7 +20,7 @@ import java.util.StringTokenizer;
  * @author Jung Soo Kim
  * @version 1.0
  */
-public class Course {
+public class Course extends Observable {
 
     /**
      * A string representing this course's ID.
@@ -174,6 +175,8 @@ public class Course {
      */
     public void registerStudent(Student objStudent) {
         this.vRegistered.add(objStudent);
+        setChanged(); // Mark the object as changed
+        notifyObservers(); // Notify all observers
     }
 
     /**

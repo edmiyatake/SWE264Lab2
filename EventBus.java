@@ -113,6 +113,7 @@ public class EventBus {
      * @param sEventParam event parameter as a string
      */
     public static void announce(int iEventCode, String sEventParam) {
+
         aEvent[iEventCode].setChanged();
         aEvent[iEventCode].notifyObservers(sEventParam);
     }

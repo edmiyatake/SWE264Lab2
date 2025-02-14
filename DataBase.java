@@ -178,10 +178,31 @@ public class DataBase {
         Student objStudent = this.getStudentRecord(sSID);
         Course  objCourse  = this.getCourseRecord(sCID, sSection);
 
+        // Maximum capacity for course registration
+        final int MAX_CAPACITY = 3;
+
         // Make a registration.
         if (objStudent != null && objCourse != null) {
-            objStudent.registerCourse(objCourse);
-            objCourse.registerStudent(objStudent);
+            int currentStudentCount = this.getStudentCount(sCID, sSection);
+            
+            // Check if the course is already overbooked
+            if (currentStudentCount >= MAX_CAPACITY) {
+                System.out.println("⚠ WARNING: Course " + sCID + " Section " + sSection + " is OVERBOOKED!");
+            } 
+            else {
+                // Proceed with registration if not overbooked
+                objStudent.registerCourse(objCourse);
+                objCourse.registerStudent(objStudent);
+                System.out.println("Registration successful for Student " + sSID + " in " + sCID + " Section " + sSection);
+            }
         }
+    }
+
+    public int getStudentCount(String sCID, String sSection) {
+        Course objCourse = this.getCourseRecord(sCID, sSection);
+        if (objCourse != null) {
+            return objCourse.getRegisteredStudents().size(); // Use getRegisteredStudents()
+        }
+        return 0;  // If course doesn't exist, return 0
     }
 }
